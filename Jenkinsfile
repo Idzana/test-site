@@ -10,9 +10,10 @@ pipeline {
     }
 
     stages {
-        stage('Deploy') {
+        stage('Build') {
             steps {
-                echo 'Deploying...'
+                echo 'Building...'
+                sh 'apt update && apt install git'
                 sh '''
                     cd "$(mktemp -d)"
                     git clone https://github.com/Idzana/test-site.git
