@@ -29,5 +29,11 @@ pipeline {
                 sh 'curl http://localhost/'
             }
         }
+        stage('Deploy to server') {
+            steps {
+                echo 'Deploy...'
+                script { Build.push() }
+            }
+        }
     }
 }
