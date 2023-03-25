@@ -6,6 +6,7 @@ pipeline {
         docker {
             image 'nginx'
             args '-u root'
+            reuseNode true
         }
     }
 
@@ -32,10 +33,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'nothing'
-                sh '''
-                git clone https://github.com/Idzana/test-site.git
-                cd test-site/
-                docker compose up --build -d'''
+                
+                
                 }
             }
         }
