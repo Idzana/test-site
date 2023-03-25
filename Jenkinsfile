@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'apt update && apt install git'
+                sh 'apt update && apt install git -y'
                 sh '''
                     cd "$(mktemp -d)"
                     git clone https://github.com/Idzana/test-site.git
